@@ -1,5 +1,4 @@
-h1
-{
+h1{
     color: #ffffff;
     font-size: 200%;
     font-family: William, serif;
@@ -8,11 +7,9 @@ h1
     margin-bottom: 0;
     padding-top:45px;
     font-weight: normal;
-
 }
 
-h2
-{
+h2{
     margin: 0 auto auto;
     padding-bottom: 35px;
     color: #ffffff;
@@ -21,15 +18,12 @@ h2
     text-align: center;
 }
 
-img
-{
+img{
     margin-bottom: 80px;
 }
 
-h3
-{
+h3{
     color: #ffffff;
-
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     text-transform: uppercase;
@@ -38,35 +32,28 @@ h3
     padding: 0;
 }
 
-body
-{
+body{
     margin:auto; 
     padding:0;
-
     width: 850px;
-    background-color: rgb(125, 19, 255);
+    background-color: rgb(64, 143, 253);
 }
-
-img 
-{
-
+img {
     width: 300px;
 }
 
-div
-{
-    margin: 0 auto 20px;
+div{
+    margin: 1em auto 20px;
     text-align: center;
-
     width:500px;
     height:500px;
-    background-color: deepskyblue;
+    background-color: rgb(66, 85, 253);
 }
 
-p
-{
+p{
     text-align: center;
-    font-family: Impact;
-    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    font-family: "Gill Sans", sans-serif;
+    color:rgb(255, 255, 255);
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     margin: 0 auto;
 }
