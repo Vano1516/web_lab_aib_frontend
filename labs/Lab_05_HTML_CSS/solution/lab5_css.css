@@ -1,0 +1,156 @@
+/* Это стиль по умолчанию для мобильной версии с шириной до 1280*/
+
+.logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 100px;
+  }
+  
+  header {
+    text-align: left;
+  }
+  
+  nav {
+    padding: 10px;
+    background-color:rgb(255, 255, 255);
+  }
+  
+  header {
+    text-align: left;
+  }
+  
+  h1 {
+    font-size: 30px;
+    font-family: Andale Mono, monospace;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px; 
+  }
+  
+  h2 {
+    font-size: 40px;
+    font-family: Andale Mono, monospace;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 13px;
+    font-family: Andale Mono, monospace;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  a { 
+    font-family: Andale Mono, monospace;
+    font-size: 17px;
+    font-style: inherit;
+    text-decoration: none; 
+    margin-right: 20px;
+    margin-left: 20px;
+    color: rgb(2, 80,47);
+  } 
+  
+  a:hover { 
+    text-decoration: underline; 
+    color: rgb(1, 19, 11);
+  }
+  
+  .main-catalog {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;   
+  }
+  
+  .promo-catalog {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .main-catalog .item {
+    width: 100%; 
+    margin-bottom: 20px;
+    
+  }
+  .promo-catalog .item {
+    flex-basis: calc(50% - 6px);
+    margin-bottom: 12px;
+  }
+  
+  .item img {
+    height: auto;
+  }
+  
+  .item:hover img {
+    opacity: 0.6;
+  }
+  
+  body {
+    margin: 12px;
+  }
+  
+  
+  @media (min-width: 1280px) {
+    
+    .logo {
+      
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 120px; 
+      }
+    
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between; 
+      }
+  
+      nav {
+        align-self: flex-end;
+        margin-bottom: 25px; 
+      }
+  
+      body {
+        margin: 40px;
+      }
+  
+     h1, h2, p {
+      margin-bottom: 20px;
+     }
+  
+     .main-catalog {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -24px;
+    }
+    
+    .main-catalog .item {
+      width: calc(33.33% - 24px);
+      margin-left: 24px;
+    }
+    
+    .promo-catalog {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -20px;
+    }
+    
+    .promo-catalog .item {
+      flex-basis: calc(25% - 20px);
+      margin-bottom: 12px;
+      margin-left: 20px;
+  }
+    }
+  
+  
+  
+  
+  
+  
+  
