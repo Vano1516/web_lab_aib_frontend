@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
+</head>
+<body>
+<script>
+    //начало задания 1
+    console.log('Задание 1:');
+
+    var apple = 10;
+    alert(apple);
+    console.log(apple);
+    let condition = 'very importmant condition';
+    console.log('Good game is ' + condition)
+    
+    // начало задания 2
+    
+    console.log('Задание 2:');
+
+    let someVar = 145;
+    let someStr = '100';
+    let someBool = true;
+
+    console.log(someStr)
+    console.log(someVar)
+    console.log(someBool)
+    console.log('string + int =', someStr + someVar)
+    console.log('int + bool =', someVar + someBool)
+    console.log('string + bool =',someStr + someBool)
+    
+
+    // начало задания 3
+
+    console.log('Задание 3:');
+
+    let mas = [];
+
+    for ( let i = 0; i < 10; i++ ) {
+    mas[i] = Math.floor( Math.random() * ( 100 - (-100) + 1 ) + (-100) );
+    }
+
+    let numbers = mas.filter((mas) => mas > 0 );
+
+    console.log('Этот массив заполнен случайными числами от -100 до 100:'); 
+    console.log(mas); 
+
+    console.log('Этот массив содержит только положительные значения первого массива:'); 
+    console.log(numbers); 
+    
+
+    // начало задания 4
+
+    console.log('Задание 4:');
+
+    console.log('Это число сгенерировано с помощью функции getRandomNumber:', getRandomNumber(-100,100));
+    function getRandomNumber(min, max) {
+    return Math.floor( Math.random() * (max - min + 1) + min );
+    }
+
+    function multMas(arr, num) {
+        let multipliedArray = arr.map((arr) => arr * num);
+    return multipliedArray;
+    } 
+    let mas2 = [];
+    for (let i = 0; i < 10; i++) {
+    mas2[i] = getRandomNumber(-100,100);
+    }  
+    console.log('Полученный массив:');
+    console.log(mas2);
+    console.log('Данный массив получен умножением исходного на 2:');
+    console.log(multMas(mas2, 2));
+
+    const generateRandomWord = () => {
+    const words = ['Игра', 'Гитара', 'Компьютер', 'Книга','Еда' ];
+    let randomIndex = getRandomNumber(0, words.length);
+    return words[randomIndex]; 
+    };
+    console.log( 'Это слово сгенерировано случайно: ', generateRandomWord() );
+
+    // начало задания 5 (работа с объектами)
+    console.log('Задание 5:');
+
+    let person = {
+    firstName : 'Иван',
+    surname: 'Авдошкевич',
+    patronymic : 'Максимович',
+    birthday : '11/17/2002',
+    hobby : 'Игра на гитаре',
+    group : 'АИБ-3-043',
+    }
+
+    person.getInfo = function() {
+    let currentDate = new Date();
+    let birthYear = new Date(this.birthday).getFullYear();
+    let age = currentDate.getFullYear() - birthYear;
+
+    return `Name: ${this.firstName} ${this.surname} ${this.patronymic}
+        Birthday: ${this.birthday}
+        Hobby: ${this.hobby}
+        Age: ${age}`;
+    };
+
+alert(person.getInfo());
+
+const ZP = {
+Сеченов : 50000.00,
+Поляков : 75000.00,
+Кузнецова : 60000.00,
+Иванова : 55000.00,
+Курлицына : 70000.00,
+Чехов : 80000.00,
+Раскольников : 85000.00,
+Свидригайлов : 90000.00,
+Печорин : 65000.00,
+Чичиков : 95000.00
+    }
+
+function TotalSalary(salaries) {
+    let totalSalary = 0;
+
+    for (let key in salaries) {
+        totalSalary += salaries[key];
+    }
+
+    return totalSalary;
+}
+
+console.log( 'Суммарная зарплата всех сотрудников:', TotalSalary(ZP) );
+
+</script>
+</body>
+</html>
