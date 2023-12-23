@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.calendar {
+  width: 60%;
+  margin: 20px auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.days-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.day {
+  cursor: pointer;
+}
+
+.day.active {
+  width: 200px;
+  height: 10px;
+  background-color: #f0f0f0;
+}
+
+.day.selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+.notes {
+  width: 35%;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.notes h2 {
+  margin-bottom: 10px;
+}
+
+.notes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.notes li {
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
