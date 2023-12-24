@@ -1,9 +1,6 @@
 from abc import ABC, abstractmethod
 
-
 class BaseXlsBlock(ABC):
-    ROW_INCREMENT = 12
-
     def __init__(self, worksheet, row, col, data):
         self.worksheet = worksheet
         self.row = row
@@ -17,6 +14,3 @@ class BaseXlsBlock(ABC):
     @abstractmethod
     def write_data(self):
         pass
-
-    def get_row_increment(self):
-        return self.ROW_INCREMENT
