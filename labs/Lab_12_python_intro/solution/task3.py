@@ -1,6 +1,7 @@
 import string
 
 def histogram(text):
+
     counts = {}
     for char in text:
         if char not in string.whitespace:
@@ -24,7 +25,6 @@ def histogram(text):
         print(char, end=' ')
     print()
 
-print("Введите текст: ")
-txt = input()
-histogram(txt)
-нпгшнпгнеаншеа
+if __name__ == '__main__':  # точка запуска решения
+    txt = input() # ввод текста
+    histogram(txt)  # вызов функции для нахождения символов, использованных чаще всего
