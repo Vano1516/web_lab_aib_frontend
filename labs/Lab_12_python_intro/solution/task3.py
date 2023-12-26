@@ -1,30 +1,39 @@
-import string
+from collections import Counter
 
 def histogram(text):
+    char_count = Counter(text)
+    sorted_chars = sorted(char_count.keys())
+    max_count = max(char_count.values())
 
-    counts = {}
-    for char in text:
-        if char not in string.whitespace:
-            current_count = counts.get(char, 0)
-            updated_count = current_count + 1
-            counts[char] = updated_count
+    first_non_empty_line = next(
+        (i for i in range(max_count, 0, -1) 
+            if any(char_count[char] >= i for char in sorted_chars 
+                if char not in (' ', '\n'))), 0)
 
-    symbols = list(counts.keys())
-    symbols.sort()
-    max_count = max(counts.values())
+    result = []
 
-    for i in range(max_count, 0, -1):
-        for char in symbols:
-            if counts[char] >= i:
-                print('#', end=' ')
-            else:
-                print(' ', end=' ')
-        print()
+    for i in range(first_non_empty_line, 0, -1):
+        row = ''
+        for char in sorted_chars:
+            if char not in (' ', '\n'):
+                row += '#' if char_count[char] >= i else ' '
+        result.append(row)
 
-    for char in symbols:
-        print(char, end=' ')
-    print()
+    characters = ''.join(char for char in sorted_chars if char not in (' ', '\n'))
 
-if __name__ == '__main__':  # точка запуска решения
-    txt = input() # ввод текста
-    histogram(txt)  # вызов функции для нахождения символов, использованных чаще всего
+    return result, characters
+
+if __name__ == "__main__":
+    try:
+        with open("input3.txt", "r") as file:
+            encrypted_text = file.read()
+    except FileNotFoundError:
+        print("Файл input.txt не найден.")
+        exit()
+
+    result, characters = histogram(encrypted_text)
+
+    for row in result:
+        print(row)
+
+    print(characters)

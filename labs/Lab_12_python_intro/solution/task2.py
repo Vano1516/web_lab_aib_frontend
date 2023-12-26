@@ -1,31 +1,24 @@
-import math
+import heapq
 
-from typing import List
+def median_sum(n, arr):
+    max_heap, min_heap, result_sum = [], [], 0
+    
+    for i in range(n):
+        heapq.heappush(max_heap, -arr[i])
+        heapq.heappush(min_heap, -heapq.heappop(max_heap))
+        if len(min_heap) > len(max_heap):
+            heapq.heappush(max_heap, -heapq.heappop(min_heap))
+        result_sum -= max_heap[0]
 
-def calc_median_sum(numbers: List[int]):
+    return result_sum
 
-    numbers_sorted = []
-    medians = []
-    for number in numbers:
-        left, right = 0, len(numbers_sorted) - 1
-        while left <= right:
-            mid = (left + right) // 2
-            if numbers_sorted[mid] == number:
-                pass
-            elif numbers_sorted[mid] < number:
-                left = mid + 1
-            else:
-                right = mid - 1
-        numbers_sorted.insert(left, number)
-        medians.append(numbers_sorted[math.ceil(len(numbers_sorted)/2) - 1])
-    return sum(medians)
+if __name__ == "__main__":
 
-if __name__ == '__main__': # точка запуска решения
-    n = int(input())   # ввод длины последовательности
-    sequence = list(map(int, input().split()))  # ввод последовательности чисел
+    try:
+        with open("input2.txt", "r") as file:
+            n, arr = int(file.readline()), list(map(int, file.readline().split()))
+    except FileNotFoundError:
+        print("Файл input.txt не найден.")
+        n, arr = int(input()), list(map(int, input().split()))
 
-    if(len(sequence)>n or len(sequence)<n): # проверка на корректность данных
-        print("Некорректный ввод данных. Введите еще раз")
-    else:
-        result = calc_median_sum(sequence) # вызов функции для расчета суммы медиан списка чисел
-        print(result)  # вывод результата
+    print(median_sum(n, arr))
